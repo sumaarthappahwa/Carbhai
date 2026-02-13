@@ -1,11 +1,11 @@
 
 import React, { useRef } from 'react';
-import Navbar from './components/Navbar';
-import ServiceCard from './components/ServiceCard';
-import FloatingCall from './components/FloatingCall';
-import BrandMarquee from './components/BrandMarquee';
-import DiscountPopup from './components/DiscountPopup';
-import { SERVICE_PACKAGES } from './constants';
+import Navbar from './components/Navbar.tsx';
+import ServiceCard from './components/ServiceCard.tsx';
+import FloatingCall from './components/FloatingCall.tsx';
+import BrandMarquee from './components/BrandMarquee.tsx';
+import DiscountPopup from './components/DiscountPopup.tsx';
+import { SERVICE_PACKAGES } from './constants.tsx';
 
 const App: React.FC = () => {
   const sliderRef = useRef<HTMLDivElement>(null);

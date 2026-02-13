@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { ServicePackage } from '../types';
+import { ServicePackage } from '../types.ts';
 
 interface Props {
   pkg: ServicePackage | null;

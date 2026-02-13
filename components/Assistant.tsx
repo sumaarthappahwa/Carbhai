@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { getCarCareAdvice } from '../services/geminiService';
+import { getCarCareAdvice } from '../services/geminiService.ts';
 
 const Assistant: React.FC = () => {
   const [query, setQuery] = useState('');
