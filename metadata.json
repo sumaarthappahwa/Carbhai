@@ -1,0 +1,7 @@
+{
+  "name": "Carbhai - Premium Car Spa",
+  "description": "Professional car cleaning and detailing services at your doorstep. From interior dry cleaning to exterior 3M rubbing and buffing.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
