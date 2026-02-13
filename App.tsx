@@ -5,6 +5,7 @@ import ServiceCard from './components/ServiceCard.tsx';
 import FloatingCall from './components/FloatingCall.tsx';
 import BrandMarquee from './components/BrandMarquee.tsx';
 import DiscountPopup from './components/DiscountPopup.tsx';
+import Testimonials from './components/Testimonials.tsx';
 import { SERVICE_PACKAGES } from './constants.tsx';
 
 const App: React.FC = () => {
@@ -133,6 +134,9 @@ const App: React.FC = () => {
             </div>
           </div>
         </section>
+
+        {/* Testimonials Section */}
+        <Testimonials />
 
         {/* Keywords / Reach Section */}
         <section className="py-20 bg-white">
