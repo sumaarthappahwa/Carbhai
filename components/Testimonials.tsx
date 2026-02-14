@@ -1,6 +1,6 @@
 
 import React, { useRef } from 'react';
-import { TESTIMONIALS } from '../constants.tsx';
+import { TESTIMONIALS } from '../constants';
 
 const Testimonials: React.FC = () => {
   const sliderRef = useRef<HTMLDivElement>(null);

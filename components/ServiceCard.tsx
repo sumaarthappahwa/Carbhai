@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { ServicePackage } from '../types.ts';
+import { ServicePackage } from '../types';
 
 interface Props {
   pkg: ServicePackage;

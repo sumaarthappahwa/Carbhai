@@ -1,13 +1,13 @@
 
 import React, { useRef } from 'react';
-import Navbar from './components/Navbar.tsx';
-import ServiceCard from './components/ServiceCard.tsx';
-import FloatingCall from './components/FloatingCall.tsx';
-import BrandMarquee from './components/BrandMarquee.tsx';
-import DiscountPopup from './components/DiscountPopup.tsx';
-import Testimonials from './components/Testimonials.tsx';
-import HowItWorks from './components/HowItWorks.tsx';
-import { SERVICE_PACKAGES } from './constants.tsx';
+import Navbar from './components/Navbar';
+import ServiceCard from './components/ServiceCard';
+import FloatingCall from './components/FloatingCall';
+import BrandMarquee from './components/BrandMarquee';
+import DiscountPopup from './components/DiscountPopup';
+import Testimonials from './components/Testimonials';
+import HowItWorks from './components/HowItWorks';
+import { SERVICE_PACKAGES } from './constants';
 
 const App: React.FC = () => {
   const sliderRef = useRef<HTMLDivElement>(null);
@@ -81,9 +81,9 @@ const App: React.FC = () => {
                 </div>
               </div>
               <div className="lg:w-1/2 mt-16 lg:mt-0 relative">
-                <div className="relative rounded-[40px] overflow-hidden shadow-2xl border-[12px] border-white group">
+                <div className="relative rounded-[40px] overflow-hidden shadow-2xl border-[12px] border-white group bg-gray-100">
                   <img 
-                    src="https://images.unsplash.com/photo-1552933529-e359b247726e?auto=format&fit=crop&q=80&w=1000" 
+                    src="https://images.unsplash.com/photo-1601362840469-51e4d8d59085?auto=format&fit=crop&q=80&w=1000" 
                     alt="Premium Car Detailing at Home" 
                     className="w-full h-[550px] object-cover transition-transform duration-700 group-hover:scale-110"
                   />
