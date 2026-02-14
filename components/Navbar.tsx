@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { NAV_LINKS } from '../constants';
+import { NAV_LINKS } from '../constants.tsx';
 
 const Navbar: React.FC = () => {
   const phoneNumber = "7011196837";

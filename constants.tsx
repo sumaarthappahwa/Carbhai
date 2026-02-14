@@ -1,5 +1,5 @@
 
-import { ServicePackage } from './types';
+import { ServicePackage } from './types.ts';
 
 export const SERVICE_PACKAGES: ServicePackage[] = [
   {
