@@ -6,6 +6,7 @@ import FloatingCall from './components/FloatingCall.tsx';
 import BrandMarquee from './components/BrandMarquee.tsx';
 import DiscountPopup from './components/DiscountPopup.tsx';
 import Testimonials from './components/Testimonials.tsx';
+import HowItWorks from './components/HowItWorks.tsx';
 import { SERVICE_PACKAGES } from './constants.tsx';
 
 const App: React.FC = () => {
@@ -48,41 +49,47 @@ const App: React.FC = () => {
                   Serving Noida, Greater Noida & Ghaziabad
                 </div>
                 <h1 className="text-5xl lg:text-7xl font-black text-gray-900 leading-[1.1] mb-8">
-                  Premium Car Spa at your <span className="text-red-600">Doorstep.</span>
+                  Your Car Deserves a <span className="text-red-600">Home Spa.</span>
                 </h1>
-                <p className="text-xl text-gray-500 mb-6 max-w-xl leading-relaxed">
-                  Join 10,000+ happy customers across <span className="font-bold text-gray-900 underline decoration-red-600">Noida, Greater Noida, and Ghaziabad</span>. Professional car washing and dry cleaning starting at just <span className="text-gray-900 font-bold">₹799</span>.
+                <p className="text-xl text-gray-500 mb-10 max-w-xl leading-relaxed">
+                  Join 10,000+ happy customers who trust Carbhai for professional detailing at their doorstep. Packages starting at <span className="text-gray-900 font-bold">₹799</span>.
                 </p>
                 
-                <div className="flex flex-wrap gap-2 mb-10 max-w-lg">
-                  {keywords.slice(0, 4).map((kw, i) => (
-                    <span key={i} className="text-[10px] uppercase tracking-wider font-bold text-gray-400 bg-gray-50 px-3 py-1 rounded-full border border-gray-100">
-                      {kw}
-                    </span>
-                  ))}
-                </div>
-
-                <div className="flex flex-col sm:flex-row gap-4">
+                <div className="flex flex-col sm:flex-row gap-4 mb-12">
                   <a href="#services" className="bg-gray-900 text-white text-center px-10 py-5 rounded-2xl text-lg font-bold hover:bg-red-600 transition-all shadow-xl shadow-gray-200">
-                    View Services
+                    Explore Packages
                   </a>
                   <a href={`https://wa.me/91${phoneNumber}`} target="_blank" rel="noopener noreferrer" className="bg-green-600 text-white text-center px-10 py-5 rounded-2xl text-lg font-bold hover:bg-green-700 transition-all shadow-xl shadow-green-200">
-                    WhatsApp: {phoneNumber}
+                    WhatsApp to Book
                   </a>
+                </div>
+
+                <div className="flex items-center gap-6">
+                  <div className="flex -space-x-3">
+                    {[1,2,3,4].map(i => (
+                      <div key={i} className="w-12 h-12 rounded-full border-4 border-white bg-gray-200 overflow-hidden">
+                        <img src={`https://i.pravatar.cc/100?u=${i+10}`} alt="Customer" />
+                      </div>
+                    ))}
+                  </div>
+                  <div>
+                    <div className="flex text-yellow-400">
+                      {[...Array(5)].map((_, i) => <span key={i}>★</span>)}
+                    </div>
+                    <p className="text-sm font-bold text-gray-900">4.9/5 Rating (2.4k+ Reviews)</p>
+                  </div>
                 </div>
               </div>
               <div className="lg:w-1/2 mt-16 lg:mt-0 relative">
                 <div className="relative rounded-[40px] overflow-hidden shadow-2xl border-[12px] border-white group">
                   <img 
-                    src="https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?auto=format&fit=crop&q=80&w=1000" 
+                    src="https://images.unsplash.com/photo-1552933529-e359b247726e?auto=format&fit=crop&q=80&w=1000" 
                     alt="Premium Car Detailing at Home" 
-                    className="w-full h-[500px] object-cover transition-transform duration-700 group-hover:scale-110"
+                    className="w-full h-[550px] object-cover transition-transform duration-700 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-10">
-                    <div className="text-white">
-                      <div className="text-lg font-bold mb-2">Service at Your Home</div>
-                      <div className="text-sm text-gray-300">Noida • Greater Noida • Ghaziabad</div>
-                    </div>
+                  <div className="absolute top-8 right-8 bg-white/90 backdrop-blur p-4 rounded-2xl shadow-xl">
+                    <div className="text-red-600 font-black text-xl line-clamp-1">Noida's #1</div>
+                    <div className="text-gray-500 text-[10px] font-bold uppercase tracking-wider">Doorstep Provider</div>
                   </div>
                 </div>
               </div>
@@ -90,17 +97,18 @@ const App: React.FC = () => {
           </div>
         </section>
 
-        {/* Brand Logos Marquee */}
         <BrandMarquee />
+
+        <HowItWorks />
 
         {/* Services Slider Section */}
         <section id="services" className="py-24 bg-gray-50 relative overflow-hidden">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
               <div className="max-w-2xl">
-                <span className="text-red-600 font-bold uppercase tracking-[0.2em] text-xs">Our Expert Packages</span>
+                <span className="text-red-600 font-bold uppercase tracking-[0.2em] text-xs">Pick Your Spa Package</span>
                 <h2 className="text-4xl md:text-5xl font-black text-gray-900 mt-4 leading-tight">
-                  Doorstep Detailing <br />Designed for You.
+                  Transparent Pricing. <br />Professional Results.
                 </h2>
               </div>
               <div className="flex gap-4">
@@ -135,74 +143,55 @@ const App: React.FC = () => {
           </div>
         </section>
 
-        {/* Testimonials Section */}
         <Testimonials />
 
-        {/* Keywords / Reach Section */}
-        <section className="py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid md:grid-cols-2 gap-16 items-center">
+        {/* Features / Why Us */}
+        <section id="features" className="py-24 bg-gray-900 text-white overflow-hidden relative">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="grid md:grid-cols-2 gap-20 items-center">
               <div>
-                <h2 className="text-3xl font-black text-gray-900 mb-6">Expert Car Wash & Cleaning Services Near You</h2>
-                <p className="text-gray-500 text-lg mb-8">
-                  We specialize in car deep cleaning and dry cleaning services at home across Noida, Greater Noida, and Ghaziabad. No need to visit a garage, our team arrives with all professional equipment to give your car a showroom shine.
-                </p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {keywords.map((kw, i) => (
-                    <div key={i} className="flex items-center gap-3 text-gray-600 font-medium">
-                      <div className="w-2 h-2 rounded-full bg-red-600"></div>
-                      {kw}
-                    </div>
-                  ))}
-                </div>
+                 <span className="text-red-600 font-bold uppercase tracking-[0.2em] text-xs">Why Carbhai?</span>
+                 <h2 className="text-4xl md:text-6xl font-black mb-10 mt-4 leading-[1.1]">The Gold Standard of Doorstep Detailing.</h2>
+                 <div className="space-y-8">
+                   {[
+                     { title: 'Genuine 3M Products', desc: 'We only use 3M-certified materials for rubbing, waxing, and polishing.' },
+                     { title: 'Verified Specialists', desc: 'Our team undergoes background checks and 100+ hours of training.' },
+                     { title: 'Hassle-Free Experience', desc: 'No more waiting at workshops. We bring the workshop to your parking.' }
+                   ].map((item, i) => (
+                     <div key={i} className="flex gap-6">
+                       <div className="w-12 h-12 bg-red-600 rounded-2xl flex-shrink-0 flex items-center justify-center font-bold">✓</div>
+                       <div>
+                         <h4 className="text-xl font-bold mb-2">{item.title}</h4>
+                         <p className="text-gray-400">{item.desc}</p>
+                       </div>
+                     </div>
+                   ))}
+                 </div>
               </div>
-              <div className="bg-gray-900 rounded-[32px] p-10 text-white text-center">
-                <div className="text-5xl mb-6">📞</div>
-                <h3 className="text-3xl font-black mb-4">Book via Call or WhatsApp</h3>
-                <p className="text-gray-400 mb-8">Our experts are available to guide you 9 AM to 7 PM daily.</p>
-                <div className="flex flex-col gap-4">
-                  <a href={`tel:${phoneNumber}`} className="bg-red-600 text-white py-4 rounded-2xl font-bold text-xl hover:bg-red-700 transition-all">
-                    Call: {phoneNumber}
-                  </a>
-                  <a href={`https://wa.me/91${phoneNumber}`} target="_blank" rel="noopener noreferrer" className="bg-green-600 text-white py-4 rounded-2xl font-bold text-xl hover:bg-green-700 transition-all">
-                    WhatsApp: {phoneNumber}
-                  </a>
-                </div>
+              <div className="relative">
+                 <div className="absolute -inset-4 bg-red-600 rounded-[40px] rotate-3 -z-10 opacity-20"></div>
+                 <img 
+                   src="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&q=80&w=1000" 
+                   alt="Car Cleaning"
+                   className="rounded-[40px] shadow-2xl"
+                 />
               </div>
             </div>
           </div>
         </section>
 
-        {/* Features / Why Us */}
-        <section id="features" className="py-24 bg-gray-900 text-white overflow-hidden relative">
-          <div className="absolute top-0 right-0 w-full h-full opacity-5 pointer-events-none">
-            <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-              <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
-                <path d="M 10 0 L 0 0 0 10" fill="none" stroke="white" strokeWidth="0.5"/>
-              </pattern>
-              <rect width="100" height="100" fill="url(#grid)" />
-            </svg>
-          </div>
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div className="text-center mb-20">
-              <h2 className="text-4xl md:text-6xl font-black mb-6">Why Carbhai?</h2>
-              <p className="text-gray-400 max-w-2xl mx-auto text-lg leading-relaxed">
-                Covering Noida, Greater Noida, and Ghaziabad with premium 3M detailing at your home.
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-12">
-              {[
-                { title: 'Home Service Coverage', desc: 'Serving Noida Sector 15 to 150, Greater Noida West, and all of Ghaziabad.', icon: '📍' },
-                { title: '3M Genuine Quality', desc: 'Professional rubbing, buffing, and wax using authentic 3M materials.', icon: '✨' },
-                { title: 'Expert Cleaners', icon: '🛠️', desc: 'Specialized in dry cleaning, foam wash, and machine buffing.' }
-              ].map((feature, i) => (
-                <div key={i} className="bg-white/5 border border-white/10 p-10 rounded-[32px] hover:bg-white/10 transition-colors text-center">
-                  <div className="text-4xl mb-6">{feature.icon}</div>
-                  <h3 className="text-2xl font-bold mb-4">{feature.title}</h3>
-                  <p className="text-gray-400 leading-relaxed">{feature.desc}</p>
-                </div>
-              ))}
+        {/* Final CTA */}
+        <section className="py-20 bg-red-600">
+          <div className="max-w-7xl mx-auto px-4 text-center text-white">
+            <h2 className="text-4xl md:text-6xl font-black mb-8">Ready to transform your car?</h2>
+            <p className="text-xl text-red-100 mb-12 max-w-2xl mx-auto">Get your first Essential Spa with a 20% discount. Limited slots available this week in Noida!</p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href={`tel:${phoneNumber}`} className="bg-white text-red-600 px-12 py-5 rounded-2xl font-black text-xl hover:bg-gray-100 transition-all">
+                Call Now: {phoneNumber}
+              </a>
+              <a href={`https://wa.me/91${phoneNumber}`} target="_blank" rel="noopener noreferrer" className="bg-gray-900 text-white px-12 py-5 rounded-2xl font-black text-xl hover:bg-black transition-all">
+                Book on WhatsApp
+              </a>
             </div>
           </div>
         </section>
@@ -213,49 +202,38 @@ const App: React.FC = () => {
           <div className="grid md:grid-cols-4 gap-12">
             <div className="col-span-2">
                <div className="flex items-center gap-2 mb-6">
-                <div className="w-8 h-8 bg-red-600 rounded-lg flex items-center justify-center text-white font-bold text-lg">
-                  C
-                </div>
-                <span className="text-xl font-extrabold tracking-tight text-gray-900">
-                  Car<span className="text-red-600">bhai</span>
-                </span>
+                <div className="w-8 h-8 bg-red-600 rounded-lg flex items-center justify-center text-white font-bold text-lg">C</div>
+                <span className="text-xl font-extrabold tracking-tight text-gray-900">Car<span className="text-red-600">bhai</span></span>
               </div>
               <p className="text-gray-500 max-w-sm mb-8 leading-relaxed">
-                Your trusted partner for car washing at home and car deep cleaning services in Noida, Greater Noida, and Ghaziabad.
+                Premium car spa and detailing services delivered to your doorstep. Proudly serving Noida, Greater Noida, and Ghaziabad.
               </p>
-              <div className="flex gap-4">
-                <a href={`tel:${phoneNumber}`} className="w-10 h-10 bg-gray-50 text-gray-400 rounded-full flex items-center justify-center hover:bg-red-50 hover:text-red-600 transition-all cursor-pointer">
-                  📞
-                </a>
-              </div>
             </div>
             <div>
               <h4 className="font-bold text-gray-900 mb-6">Service Areas</h4>
               <ul className="space-y-4 text-gray-500 font-medium">
                 <li>Noida (All Sectors)</li>
                 <li>Greater Noida West</li>
-                <li>Greater Noida (Pari Chowk)</li>
+                <li>Gaur City • Crossings Repu.</li>
                 <li>Ghaziabad</li>
               </ul>
             </div>
             <div>
-              <h4 className="font-bold text-gray-900 mb-6">Get in Touch</h4>
+              <h4 className="font-bold text-gray-900 mb-6">Quick Links</h4>
               <ul className="space-y-4 text-gray-500 font-medium">
-                <li><a href={`tel:${phoneNumber}`} className="hover:text-red-600 transition-colors">Call: {phoneNumber}</a></li>
-                <li><a href={`https://wa.me/91${phoneNumber}`} target="_blank" rel="noopener noreferrer" className="hover:text-red-600 transition-colors">WhatsApp: {phoneNumber}</a></li>
+                <li><a href="#services" className="hover:text-red-600">Our Packages</a></li>
+                <li><a href="#testimonials" className="hover:text-red-600">Customer Reviews</a></li>
+                <li><a href={`tel:${phoneNumber}`} className="hover:text-red-600">Call Us</a></li>
               </ul>
             </div>
           </div>
-          <div className="mt-16 pt-8 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-gray-400 text-sm">© 2024 Carbhai Technologies Pvt Ltd. All rights reserved.</p>
+          <div className="mt-16 pt-8 border-t border-gray-100 text-center">
+            <p className="text-gray-400 text-sm">© 2024 Carbhai Detailing Services. Noida, Uttar Pradesh.</p>
           </div>
         </div>
       </footer>
 
-      {/* Discount Popup */}
       <DiscountPopup />
-
-      {/* Floating Action Buttons */}
       <FloatingCall />
     </div>
   );
