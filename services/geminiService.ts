@@ -1,10 +1,10 @@
 
 import { GoogleGenAI } from "@google/genai";
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY || '' });
-
 export const getCarCareAdvice = async (userQuery: string) => {
   try {
+    // Initializing inside the function ensures the latest environment variables are captured
+    const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
     const response = await ai.models.generateContent({
       model: 'gemini-3-flash-preview',
       contents: `You are an expert car detailing assistant for the brand "Carbhai". 
