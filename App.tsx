@@ -1,5 +1,6 @@
 
 import React, { useRef } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import Navbar from './components/Navbar.tsx';
 import ServiceCard from './components/ServiceCard.tsx';
 import FloatingCall from './components/FloatingCall.tsx';
@@ -257,6 +258,9 @@ const App: React.FC = () => {
 
       {/* Floating Action Buttons */}
       <FloatingCall />
+
+      {/* Vercel Web Analytics */}
+      <Analytics />
     </div>
   );
 };
